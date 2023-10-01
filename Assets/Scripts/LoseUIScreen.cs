@@ -18,10 +18,15 @@ public class LoseUIScreen : UIScreen
 	{
 		base.Init(gameCanvas);
 		
-		_restartButton.onClick.AddListener(GameManager.Instance.ResetPlayerPosition);
+		_restartButton.onClick.AddListener(Reset);
 		_restartButton.onClick.AddListener(Close);
 		
 		_menuButton.onClick.AddListener(ToMenu);
+	}
+
+	private void Reset()
+	{
+		GameManager.Instance.ResetPlayerPosition();
 	}
 
 	private void ToMenu()

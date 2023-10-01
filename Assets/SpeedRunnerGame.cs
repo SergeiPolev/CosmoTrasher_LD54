@@ -28,6 +28,8 @@ public class SpeedRunnerGame : MonoBehaviourSingleton<SpeedRunnerGame>
 			GameCanvas.Instance.GetScreen<TimeUIScreen>(UIScreenType.TIME).Close();
 			GameCanvas.Instance.GetScreen<SpeedrunResultUIScreen>(UIScreenType.SPEEDRUN_RESULT).Open();
 			GameCanvas.Instance.GetScreen<SpeedrunResultUIScreen>(UIScreenType.SPEEDRUN_RESULT).SetScores(time, isHighscore);
+			GameManager.Instance.COMPLETED = true;
+			
 			if (isHighscore)
 			{
 				PlayerPrefs.SetFloat("Highscore", time);

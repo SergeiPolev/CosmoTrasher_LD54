@@ -1034,14 +1034,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Garbage (12)
       objectReference: {fileID: 0}
-    - target: {fileID: 6453469429131903658, guid: 237e0a4f90b4c344194177a30ec10a49, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6453469429131903658, guid: 237e0a4f90b4c344194177a30ec10a49, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 237e0a4f90b4c344194177a30ec10a49, type: 3}
 --- !u!4 &1576167255908155402 stripped

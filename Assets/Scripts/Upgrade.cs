@@ -49,7 +49,10 @@ public abstract class Upgrade : MonoBehaviour
 			Player.Instance.Buy();
 			gameObject.SetActive(false);
 			GameCanvas.Instance.GetScreen<PlayerIndicatorsUIScreen>(UIScreenType.INDICATORS).CompleteTimer(false);
-			_nextUpgrade?.SetActive(true);
+			if (_nextUpgrade != null)
+			{
+				_nextUpgrade.SetActive(true);
+			}
 		}
 	}
 

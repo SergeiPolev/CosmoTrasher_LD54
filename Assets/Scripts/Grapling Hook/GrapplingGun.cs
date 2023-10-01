@@ -114,7 +114,11 @@ public class GrapplingGun : MonoBehaviour
             Release();
             GameCanvas.Instance.GetScreen<PlayerIndicatorsUIScreen>(UIScreenType.INDICATORS).DeactivateTimer();
         }
-        else
+    }
+
+    private void FixedUpdate()
+    {
+        if (!Input.GetMouseButton(0))
         {
             Vector2 mousePos = m_camera.ScreenToWorldPoint(Input.mousePosition);
             RotateGun(mousePos, true);

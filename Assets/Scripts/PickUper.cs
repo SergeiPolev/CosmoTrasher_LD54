@@ -40,6 +40,7 @@ public class PickUper : MonoBehaviourSingleton<PickUper>
 					}
 					else
 					{
+						AudioManager.Instance.PlayBadPickSound();
 						OnPickUp?.Invoke(false, null);
 					}
 				}

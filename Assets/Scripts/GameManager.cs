@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
 
     public event Action OnReset;
     public Action OnGetItem;
+
+    public bool COMPLETED;
     
     private void Start()
     {
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
         PlayerRB.position = SpawnPoint.position;
 
         AudioManager.Instance.UndoCutoff();
+        DeathCircle.Instance.ResetGame();
 
         OnReset?.Invoke();
     }

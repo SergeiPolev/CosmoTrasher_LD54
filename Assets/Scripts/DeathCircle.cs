@@ -19,7 +19,7 @@ public class DeathCircle : MonoBehaviourSingleton<DeathCircle>
 		GameManager.Instance.OnReset += ResetGame;
 	}
 
-	private void ResetGame()
+	public void ResetGame()
 	{
 		_inDanger = false;
 		_isOut = false;
@@ -28,6 +28,11 @@ public class DeathCircle : MonoBehaviourSingleton<DeathCircle>
 
 	private void Update()
 	{
+		if (GameManager.Instance.COMPLETED)
+		{
+			return;
+		}
+			
 		if (_isOut)
 		{
 			return;
@@ -50,6 +55,7 @@ public class DeathCircle : MonoBehaviourSingleton<DeathCircle>
 		{
 			_isOut = true;
 			OnOut?.Invoke();
+			AudioManager.Instance.PlayDeadSound();
 			GameCanvas.Instance.GetScreen<LoseUIScreen>(UIScreenType.LOSE).Open();
 		}
 	}
